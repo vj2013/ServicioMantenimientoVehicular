@@ -27,10 +27,7 @@ public class VehiculoController {
     }
 
     @PostMapping()
-    public ResponseEntity<?> create(@RequestBody VehiculoEntity vehiculoEntity, BindingResult result){
-/*        if (result.hasErrors()) {
-            return validate(result);
-        }*/
+    public ResponseEntity<?> create(@RequestBody VehiculoEntity vehiculoEntity){
         return ResponseEntity.status(HttpStatus.CREATED).body(vehiculoService.save(vehiculoEntity));
     }
 }
